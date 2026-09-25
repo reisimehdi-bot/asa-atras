@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>راهنمای به‌روزرسانی موجودی قطعات</title>
+<style>
+  body {
+    font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+    background: #f4f7fb;
+    color: #1e293b;
+  }
+  h1 { color: #0f3d5c; font-size: 1.4rem; border-bottom: 3px solid #2980b9; padding-bottom: 8px; }
+  h2 { color: #1a6aa8; font-size: 1.15rem; margin-top: 28px; }
+  h3 { color: #0f3d5c; font-size: 1.02rem; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; background: #fff; }
+  th, td { border: 1px solid #94b8d4; padding: 8px 10px; text-align: right; font-size: 0.92rem; }
+  th { background: #e8f0f7; color: #0f3d5c; }
+  code, pre { font-family: Consolas, monospace; background: #e8f0f7; direction: ltr; text-align: left; }
+  pre { padding: 12px; border-radius: 8px; overflow-x: auto; border: 1px solid #c5d6e4; }
+  a { color: #1a6aa8; }
+  hr { border: none; border-top: 1px solid #c5d6e4; margin: 24px 0; }
+  ol, ul { padding-right: 22px; }
+  li { margin: 6px 0; }
+  .box { background: #fff; border: 1px solid #94b8d4; border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+</style>
+</head>
+<body>
+<h1>راهنمای کامل به‌روزرسانی موجودی و کاتالوگ قطعات</h1>
+<br>
+<p>ریپوی گیت‌هاب:</p>
+<p><a href="https://github.com/reisimehdi-bot/asa-atras" target="_blank" rel="noopener">https://github.com/reisimehdi-bot/asa-atras</a></p>
+<br>
+<hr>
+<br>
+<h2>دو حالت مختلف آپدیت</h2>
+<br>
+<table>
+<tr><th>حالت</th><th>چه چیزی عوض شده؟</th><th>کدام فایل را ویرایش کنید؟</th></tr>
+<tr><td><strong>الف) فقط موجودی</strong></td><td>فقط عدد موجودی چند کالا</td><td>فقط <code>stock.csv</code></td></tr>
+<tr><td><strong>ب) کالای جدید یا تغییر کاتالوگ</strong></td><td>ردیف جدید، عنوان، کد، گروه و ...</td><td>باید <code>index.html</code> را هم به‌روز کنید</td></tr>
+</table>
+<br>
+<hr>
+<br>
+<h1>حالت الف) فقط تغییر موجودی (کار روزانه — حدود ۱ دقیقه)</h1>
+<br>
+<p>این کار را می‌توانید با <strong>گوشی اندروید</strong> یا کامپیوتر انجام دهید.</p>
+<br>
+<h2>روش ۱: با گوشی اندروید + اپلیکیشن GitHub</h2>
+<br>
+<h3>قدم ۱ — نصب اپ</h3>
+<ol>
+<li>از Google Play اپلیکیشن <strong>GitHub</strong> را نصب کنید.</li>
+<li>وارد حساب گیت‌هاب خود شوید.</li>
+</ol>
+<br>
+<h3>قدم ۲ — باز کردن ریپو</h3>
+<ol>
+<li>داخل اپ، روی ذره‌بین (Search) بزنید.</li>
+<li>بنویسید: <code>reisimehdi-bot</code></li>
+<li>ریپوی <code>reisimehdi-bot/asa-atras</code> را باز کنید.</li>
+</ol>
+<br>
+<h3>قدم ۳ — باز کردن فایل موجودی</h3>
+<ol>
+<li>فایل <strong><code>stock.csv</code></strong> را پیدا کنید و باز کنید.</li>
+<li>گوشه بالا روی آیکون <strong>مداد (Edit)</strong> بزنید.</li>
+</ol>
+<br>
+<h3>قدم ۴ — ویرایش عدد موجودی</h3>
+<p>فایل شبیه این است:</p>
+<br>
+<p>``<code></p>
+<p>code,stock</p>
+<p>2000-CAP-0001,20</p>
+<p>2000-CAP-0002,3175</p>
+<p>2000-CAP-0003,0</p>
+<p></code>`<code></p>
+<br>
+<ul>
+<li>ستون اول = کد کالا (دست نزنید)</li>
+<li>ستون دوم = موجودی (همین را عوض کنید)</li>
+</ul>
+<br>
+<p>مثال: اگر موجودی </code>2000-CAP-0001<code> از ۲۰ به ۱۵ رسید، بنویسید:</p>
+<br>
+<p></code>`<code></p>
+<p>2000-CAP-0001,15</p>
+<p></code>`<code></p>
+<br>
+<h3>قدم ۵ — ذخیره و ارسال</h3>
+<ol>
+<li>پایین صفحه روی <strong>Commit changes</strong> بزنید.</li>
+<li>یک توضیح کوتاه بنویسید (مثلاً: آپدیت موجودی ۲۱ شهریور).</li>
+<li>دوباره <strong>Commit changes</strong> را بزنید.</li>
+</ol>
+<br>
+<h3>قدم ۶ — صبر کنید</h3>
+<p>۳۰ تا ۶۰ ثانیه صبر کنید تا سایت آدرس raw را به‌روز کند. بعد صفحه جستجو را Refresh کنید.</p>
+<br>
+<hr>
+<br>
+<h2>روش ۲: با مرورگر گوشی یا کامپیوتر (سایت گیت‌هاب)</h2>
+<br>
+<ol>
+<li>بروید به:</li>
+</ol>
+<p>   <a href="https://github.com/reisimehdi-bot/asa-atras" target="_blank" rel="noopener">https://github.com/reisimehdi-bot/asa-atras</a></p>
+<ol>
+<li>فایل <strong></code>stock.csv<code></strong> را باز کنید.</li>
+<li>روی آیکون <strong>مداد</strong> (Edit this file) کلیک کنید.</li>
+<li>اعداد ستون </code>stock<code> را عوض کنید.</li>
+<li>پایین صفحه دکمه سبز <strong>Commit changes</strong> را بزنید.</li>
+<li>۳۰–۶۰ ثانیه صبر کنید و صفحه سایت قطعات را رفرش کنید.</li>
+</ol>
+<br>
+<hr>
+<br>
+<h2>روش ۳: با Google Sheets روی گوشی (راحت‌تر برای تعداد زیاد)</h2>
+<br>
+<ol>
+<li>فایل </code>stock.csv<code> را از گیت‌هاب <strong>Download</strong> کنید.</li>
+<li>با <strong>Google Sheets</strong> باز کنید.</li>
+<li>ستون موجودی را ویرایش کنید.</li>
+<li>از منو: <strong>File → Download → Comma-Separated Values (.csv)</strong></li>
+<li>فایل دانلودشده را دوباره در گیت‌هاب آپلود کنید:</li>
+</ol>
+<p>   - وارد ریپو شوید</p>
+<p>   - روی </code>stock.csv<code> کلیک کنید</p>
+<p>   - آیکون سطل زباله (حذف) بزنید و Commit کنید</p>
+<p>   - بعد <strong>Add file → Upload files</strong> و فایل جدید را بکشید و Commit کنید</p>
+<br>
+<p>یا ساده‌تر: همان Edit در گیت‌هاب و Paste کردن محتوای CSV جدید.</p>
+<br>
+<hr>
+<br>
+<h1>حالت ب) اضافه شدن کالای جدید یا تغییر کل صفحه</h1>
+<br>
+<p>وقتی کالای <strong>جدید</strong> اضافه می‌شود، فقط تغییر </code>stock.csv<code> کافی نیست.</p>
+<p>باید فایل <strong></code>index.html<code></strong> (کاتالوگ کامل) هم به‌روز شود.</p>
+<br>
+<h2>چه کسی این کار را انجام می‌دهد؟</h2>
+<p>معمولاً کسی که فایل کامل </code>index.html<code> جدید را می‌سازد (مثلاً از خروجی سیستم انبار یا فایلی که قبلاً آماده شده).</p>
+<br>
+<h2>قدم‌به‌قدم روی کامپیوتر (پیشنهادی)</h2>
+<br>
+<h3>۱. فایل جدید را آماده کنید</h3>
+<ul>
+<li>فایل </code>index.html<code> جدید (با ردیف‌های اضافه‌شده) را داشته باشید.</li>
+<li>در صورت نیاز </code>stock.csv<code> و </code>stock_update.json<code> هم از روی همان داده ساخته شود.</li>
+</ul>
+<br>
+<h3>۲. ورود به گیت‌هاب</h3>
+<p>آدرس:</p>
+<p><a href="https://github.com/reisimehdi-bot/asa-atras" target="_blank" rel="noopener">https://github.com/reisimehdi-bot/asa-atras</a></p>
+<br>
+<h3>۳. آپلود فایل‌های جدید</h3>
+<ol>
+<li>روی <strong>Add file → Upload files</strong> کلیک کنید.</li>
+<li>فایل‌های جدید را بکشید و رها کنید:</li>
+</ol>
+<p>   - </code>index.html<code></p>
+<p>   - </code>stock.csv<code></p>
+<p>   - </code>stock_update.json<code> (اختیاری)</p>
+<ol>
+<li>پایین صفحه یک پیام بنویسید (مثلاً: افزودن کالاهای جدید).</li>
+<li>دکمه سبز <strong>Commit changes</strong> را بزنید.</li>
+</ol>
+<br>
+<p>اگر فایلی از قبل وجود دارد، گیت‌هاب می‌پرسد آیا جایگزین شود — <strong>Replace</strong> را انتخاب کنید.</p>
+<br>
+<h3>۴. بررسی</h3>
+<ol>
+<li>چند دقیقه صبر کنید.</li>
+<li>صفحه سایت قطعات را با Ctrl+F5 (یا در موبایل سخت‌رفرش) باز کنید.</li>
+<li>کالای جدید را جستجو کنید.</li>
+</ol>
+<br>
+<hr>
+<br>
+<h2>قدم‌به‌قدم روی گوشی اندروید (اپ GitHub)</h2>
+<br>
+<ol>
+<li>اپ GitHub را باز کنید و وارد ریپو شوید.</li>
+<li>منوی <strong>⋯</strong> (سه نقطه) → <strong>Upload files</strong> (اگر بود) یا از مرورگر موبایل استفاده کنید.</li>
+<li>روی گوشی معمولاً آپلود چند فایل بزرگ با <strong>مرورگر Chrome</strong> راحت‌تر است:</li>
+</ol>
+<p>   - Chrome را باز کنید</p>
+<p>   - به آدرس ریپو بروید</p>
+<p>   - <strong>Add file → Upload files</strong></p>
+<p>   - فایل‌ها را از پوشه Downloads انتخاب کنید</p>
+<p>   - Commit کنید</p>
+<br>
+<hr>
+<br>
+<h1>نکات مهم</h1>
+<br>
+<ol>
+<li><strong>کد کالا</strong> باید دقیقاً مثل قبل باشد (مثلاً </code>2000-CAP-0001<code>). اگر یک حرف اشتباه باشد، موجودی روی سایت نمی‌نشیند.</li>
+<li>فایل CSV را همیشه با کدگذاری <strong>UTF-8</strong> ذخیره کنید تا حروف فارسی خراب نشود.</li>
+<li>بعد از هر Commit، ۳۰ تا ۶۰ ثانیه صبر کنید؛ آدرس‌های raw کمی تأخیر دارند.</li>
+<li>ریپو باید <strong>Public</strong> باشد تا سایت بدون رمز بتواند فایل‌ها را بخواند.</li>
+<li>کالای جدید فقط با CSV اضافه نمی‌شود؛ حتماً </code>index.html<code> باید ردیف آن کالا را داشته باشد.</li>
+</ol>
+<br>
+<hr>
+<br>
+<h1>آدرس‌های مهم</h1>
+<br>
+<table>
+<tr><th>مورد</th><th>لینک</th></tr>
+<tr><td>صفحه کد ریپو</td><td><a href="https://github.com/reisimehdi-bot/asa-atras" target="_blank" rel="noopener">https://github.com/reisimehdi-bot/asa-atras</a></td></tr>
+<tr><td>فایل موجودی (خام)</td><td><a href="https://raw.githubusercontent.com/reisimehdi-bot/asa-atras/main/stock.csv" target="_blank" rel="noopener">https://raw.githubusercontent.com/reisimehdi-bot/asa-atras/main/stock.csv</a></td></tr>
+<tr><td>پشتیبان JSON</td><td><a href="https://raw.githubusercontent.com/reisimehdi-bot/asa-atras/main/stock_update.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/reisimehdi-bot/asa-atras/main/stock_update.json</a></td></tr>
+<tr><td>صفحه اصلی سایت (اگر با GitHub Pages باشد)</td><td><a href="https://reisimehdi-bot.github.io/asa-atras/" target="_blank" rel="noopener">https://reisimehdi-bot.github.io/asa-atras/</a></td></tr>
+</table>
+<br>
+<hr>
+<br>
+<h1>خلاصه خیلی کوتاه</h1>
+<br>
+<ul>
+<li><strong>فقط عدد موجودی عوض شد</strong> → فقط </code>stock.csv<code> را Edit و Commit کنید.</li>
+<li><strong>کالای جدید آمد یا کل لیست عوض شد</strong> → </code>index.html<code> + </code>stock.csv` را Upload و Commit کنید.</li>
+<li>با گوشی: اپ GitHub یا Chrome → همان ریپو → Edit یا Upload → Commit.</li>
+<li>بعد از Commit حدود یک دقیقه صبر کنید و صفحه را رفرش کنید.</li>
+</ul>
+<br>
+<p>موفق باشید.</p>
+<br>
+</body></html>
